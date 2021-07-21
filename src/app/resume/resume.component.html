@@ -1,0 +1,71 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           <h1> Personal Details</h1>
+                        </mat-panel-title>
+            <!--
+            <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+            -->
+                    </mat-expansion-panel-header>
+                    <app-personal-details></app-personal-details>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Contact Details</h1>
+                        </mat-panel-title>
+           
+                    </mat-expansion-panel-header>
+                    <app-contact-details></app-contact-details>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           <h1>Address Details</h1> 
+                        </mat-panel-title>
+            
+                    </mat-expansion-panel-header>
+                    <app-address-details></app-address-details>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Academic Details</h1> 
+                        </mat-panel-title>
+           
+                    </mat-expansion-panel-header>
+                    <app-academic-details-list></app-academic-details-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           <h1> Work Experience</h1>
+                        </mat-panel-title>
+            
+                     </mat-expansion-panel-header>
+                    <app-work-experience-details-list></app-work-experience-details-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-12">
+            <app-image-upload></app-image-upload>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" [routerLink]="['/resumes/',obtainedResumeId,'resumePrint']" class="btn btn-primary">Review & Print</button>
+            </div>
+        </div>
+    
+</div>
+
+
+
+
+</div>

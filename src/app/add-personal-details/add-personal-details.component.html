@@ -1,0 +1,16 @@
+
+<div class="container">
+<div class="card">
+    <h2 class="card-header  bg-primary mb-3">Personal Details</h2   >
+    <div class="card-body">
+        <div class="form-group">
+            First Name:<input type="text" name="firstName" [(ngModel)]="personalDetails.firstName"> 
+            Last Name:<input type="text" name="lastName" [(ngModel)]="personalDetails.lastName">
+            <button type="submit" (click)="addOrUpdatePersonalDetails()" class="btn btn-success">Save</button>
+        </div>
+    </div>
+  </div>
+</div> 
+ 
+
+    

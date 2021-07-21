@@ -1,0 +1,77 @@
+
+<div *ngIf="addressDetails.id==-1">
+    <p>Add Address Details</p>
+    <button type="button" class="btn btn-primary" [routerLink]="['/resumes/',obtainedResumeId,'addressDetails']">Add Address details</button>
+  </div>
+  
+  
+  <div class="row"  *ngIf="addressDetails.id!=-1">
+
+    <div class="col-md-10">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3><b>AddressLine1: </b>{{addressDetails.addressLine1}}</h3>
+                </div>
+                <div class="col">
+                    <h3><b>AddressLine2: </b>{{addressDetails.addressLine2}}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3><b>City: </b>{{addressDetails.city}}</h3>
+                </div>
+                <div class="col">
+                    <h3><b>State: </b>{{addressDetails.state}}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3><b>Country: </b>{{addressDetails.country}}</h3>
+                </div>
+                <div class="col">
+                    <h3><b>Pincode: </b>{{addressDetails.pincode}}</h3>
+                </div>
+            </div>
+            
+           
+           
+        </div>
+    </div>
+    <div class="col-md-1 d-flex align-items-center">
+        <i style='font-size:40px;color: indigo;' class='far' [routerLink]="['/resumes/',obtainedResumeId,'addressDetails',addressDetails.id]">&#xf044;</i>
+    </div>
+    <div class="col-md-1 d-flex align-items-center">
+        <i  style='font-size:40px;color: red;'  class="fas fa-trash-alt" data-toggle="modal" data-target="#addressDetailsModal"></i>
+    </div>  
+    
+</div>
+
+
+<div class="modal" id="addressDetailsModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirmation for deletion</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you want to delete the details?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteAddressDetails()">delete</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+ 
+  

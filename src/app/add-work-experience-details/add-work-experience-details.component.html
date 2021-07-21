@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card">
+        <h2 class="card-header  bg-primary mb-3">Work Experience Details</h2   >
+        <div class="card-body">
+            <form #academicDetailsForm="ngForm">
+               
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+                        <label for="employeer" class="form-label">Employeer</label>
+                        <input type="text" class="form-control" name="employeer" [(ngModel)]="workExperienceDetails.employeer">
+                    </div>
+                    <div class="col-md-6 form-group ">
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" name="startDate" [(ngModel)]="workExperienceDetails.startDate"> 
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-6 form-group ">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" name="endDate" [(ngModel)]="workExperienceDetails.endDate"> 
+
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <button type="submit" (click)="addOrUpdateWorkExperienceDetails()" class="btn btn-primary">Submit</button>
+                        </div>
+
+                </div>
+
+            
+               
+            
+            </form>
+        </div>
+    </div>
+</div>
+

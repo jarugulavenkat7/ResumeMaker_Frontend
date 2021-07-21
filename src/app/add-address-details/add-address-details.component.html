@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card">
+        <h2 class="card-header  bg-primary mb-3">AddressDetails</h2   >
+        <div class="card-body">
+            <div>
+            <div class="form-group">
+                addressLine1:<input type="text" name="addressLine1" [(ngModel)]="addressDetails.addressLine1"> 
+                addressLine2:<input type="text" name="addressLine2" [(ngModel)]="addressDetails.addressLine2">
+            </div>
+                <div class="form-group">
+                city:<input type="text" name="city" [(ngModel)]="addressDetails.city"> 
+                state:<input type="text" name="state" [(ngModel)]="addressDetails.state">
+            </div>
+                <div class="form-group">
+                country:<input type="text" name="country" [(ngModel)]="addressDetails.country">
+                pincode:<input type="text" name="pincode" [(ngModel)]="addressDetails.pincode">
+                <button type="submit"  class="btn btn-success" (click)="addOrUpdateAddressDetails()">Save</button>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div> 

@@ -1,0 +1,82 @@
+<button (click)="printComponent('printComponent')" > Print</button>
+   
+
+<h1 style="text-align: center;">{{resume.personalDetails.firstName}}</h1>
+
+<hr>
+
+
+<div class="container" id="printComponent">
+    <div class="row">
+        <h4>email :{{resume.contactDetails.email}}</h4>
+        <h4>phoneNumber :{{resume.contactDetails.phoneNumber}} </h4>
+    </div>
+   
+    
+
+<div>
+    <h4>Education</h4>
+</div>
+  <div class="card mt-1" *ngFor="let academicDetails of resume.academicDetailsList">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p><b>{{academicDetails.degree}} in {{academicDetails.courseName}}</b></p>
+                        </div>
+                        <div class="col">
+                            <h3><b>Institution Name : </b>{{academicDetails.institutionName}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3>{{academicDetails.universityOrBoard}},{{academicDetails.state}},{{academicDetails.country}}</h3>
+                        </div>
+                        <div class="col">
+                            <h3><b>Year of Passing : </b>{{academicDetails.yearOfPassing}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><b>GPA or Percentage : </b> {{academicDetails.gpaOrPercentage}}</h3>
+                        </div>
+                        <div class="col">
+                            <h3><b>Degree : </b> {{academicDetails.degree}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><b>State : </b> {{academicDetails.state}}</h3>
+                        </div>
+                        <div class="col">
+                            <h3><b>Country : </b> {{academicDetails.country}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+          
+              
+        </div>
+    </div>
+	
+	<div class="container">
+    
+    <div class="row">
+        <div class="col justify-content-start">
+            <h1>Address Details</h1>
+        </div>
+        
+    </div>
+    
+<h4>AddressLine1:{{resume.addressDetails.addressLine1}}</h4>
+<h4>AddressLine2:{{resume.addressDetails.addressLine2}}</h4>
+<h4>City:{{resume.addressDetails.city}}</h4>
+<h4>State:{{resume.addressDetails.state}}</h4>
+<h4>Country:{{resume.addressDetails.country}}</h4>
+<h4>Pincode:{{resume.addressDetails.pincode}}</h4>
+
+</div>
+
+</div>

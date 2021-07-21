@@ -1,0 +1,8 @@
+<p>add-contact-details works!</p>
+<div class="container">
+    <h3>ContactDetails</h3>  
+    email:<input type="text" name="email" [(ngModel)]="contactDetails.email"> 
+    phoneNumber:<input type="text" name="phoneNumber" [(ngModel)]="contactDetails.phoneNumber"> 
+    <button type="submit" (click)="addOrUpdateContactDetails()" class="btn btn-success">Save</button>
+
+</div>

@@ -1,0 +1,37 @@
+
+
+<p>Add new resume</p>
+
+{{message}}
+<h1>My DashBoard</h1>
+<p>List of resumes</p>
+<div class="container">
+  <div class="row card-group">
+    <div  class="col-4"  >
+      <div class="col-sm-6">
+        <div class="card" style="width: 8rem;">
+          <div class="card-body">
+            <i class="fas fa-plus" style="color: blue;font-size: 80px;" (click)="createResume()"></i>
+            <h5 class="card-title"></h5>
+            <p class="card-text">New resume</p>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  class="col-4" *ngFor="let resume of resumes" >
+      <div class="col-sm-6">
+        <div class="card" style="width: 8rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{resume.id}}</h5>
+            <p class="card-text">Resume</p>
+            <i style='font-size:25px;color: indigo;' class='far'  [routerLink]="['/resumes', resume.id]">&#xf044;</i>
+            
+            <i  style='font-size:25px;color: red;'  (click)="deleteResume(resume.id)"  class="fas fa-trash-alt" ></i>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

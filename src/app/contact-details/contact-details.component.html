@@ -1,0 +1,57 @@
+
+<div *ngIf="contactDetails.id==-1">
+  <p>Add Contact Details</p>
+  <button type="button" class="btn btn-primary" [routerLink]="['/resumes/',resumeId,'addContactDetails']">Add Contact details</button>
+</div>
+
+
+<div class="row"  *ngIf="contactDetails.id!=-1">
+    <div class="col-md-10">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3><b>Email: </b>{{contactDetails.email}}</h3>
+                </div>
+                <div class="col">
+                    <h3><b>Phone Number: </b>{{contactDetails.phoneNumber}}</h3>
+                </div>
+            </div>
+            
+           
+           
+        </div>
+    </div>
+    <div class="col-md-1 d-flex align-items-center">
+        <i style='font-size:40px;color: indigo;' class='far' [routerLink]="['/resumes/',resumeId,'contactDetails',contactDetails.id]">&#xf044;</i>
+    </div>
+    <div class="col-md-1 d-flex align-items-center">
+        <i  style='font-size:40px;color: red;'  class="fas fa-trash-alt"    data-toggle="modal" data-target="#contactDetailsModal"></i>
+    </div>  
+    
+</div>
+
+<div class="modal" id="contactDetailsModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirmation for deletion</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you want to delete the details?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            
+          <button type="button" class="btn btn-danger" (click)="deleteContactDetails()" data-dismiss="modal">delete</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,72 @@
+
+
+    
+    <div class="card mt-1" *ngFor="let workExperienceDetails of workExperienceDetailsList">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h3><b>Id : </b>{{workExperienceDetails.id}}</h3>
+                        </div>
+                        <div class="col">
+                            <h3><b>Start Date: </b>{{workExperienceDetails.startDate}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3><b>End Date : </b>{{workExperienceDetails.endDate}}</h3>
+                        </div>
+                        <div class="col">
+                            <h3><b>Employeer : </b>{{workExperienceDetails.employeer}}</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-1 d-flex align-items-center">
+                <i style='font-size:40px;color: indigo;' class='far'  [routerLink]="['/resumes/',obtainedResumeId,'workExperienceDetails',workExperienceDetails.id]">&#xf044;</i>
+            </div>
+            <div class="col-md-1 d-flex align-items-center">
+                <i  style='font-size:40px;color: red;' (click)="deleteWorkExperienceDetails(workExperienceDetails.id)" class="fas fa-trash-alt" data-toggle="modal" data-target="#myModal"></i>
+            </div>  
+          
+              
+        </div>
+    </div>
+    <br>
+    <div class="card-footer">
+        <i class="fas fa-plus" [routerLink]="['/resumes/',obtainedResumeId,'workExperienceDetails']" style='font-size:40px;color: green;'></i>
+    </div>
+    
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirmation for deletion</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you want to delete the details?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            
+          <button type="button" class="btn btn-danger" data-dismiss="modal">delete</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+ 
+
+

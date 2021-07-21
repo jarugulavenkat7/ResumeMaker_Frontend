@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="card">
+        <h2 class="card-header  bg-primary mb-3">Educational Details</h2   >
+        <div class="card-body">
+
+
+
+<form #academicDetailsForm="ngForm">
+    <div class="row">
+        <div class="col-md-6 form-group ">
+            <label for="courseName" class="form-label">Course Name</label>
+            <input type="text" class="form-control"  name="courseName" [(ngModel)]="academicDetails.courseName"
+             #courseName="ngModel"  [class.is-invalid]="courseName.invalid && courseName.touched" required>
+             
+            <small class="text-danger" [class.d-none]="courseName.valid || courseName.untouched">Course Name cannot be empty</small>
+        </div>
+        <div class="col-md-6 form-group">
+            <label for="institutionName" class="form-label">Institution Name</label>
+            <input type="text" class="form-control"  name="institutionName" 
+            [(ngModel)]="academicDetails.institutionName"
+            #institutionName="ngModel"  [class.is-invalid]="institutionName.invalid && institutionName.touched" required>
+              <small class="text-danger" [class.d-none]= "institutionName.valid || institutionName.untouched">Institution Name cannot be empty</small>
+        </div>
+    </div>
+    <div class="row">
+    <div  class="col-md-6 form-group" >
+        <label for="universityOrBoard" class="form-label">universityOrBoard</label>
+        <input type="text" class="form-control" id="universityOrBoard" name="universityOrBoard" 
+        [(ngModel)]="academicDetails.universityOrBoard" 
+        #universityOrBoard="ngModel"  [class.is-invalid]="universityOrBoard.invalid && universityOrBoard.touched" required>
+        <small class="text-danger" [class.d-none]= "universityOrBoard.valid || universityOrBoard.untouched">University or Board cannot be empty</small>
+    </div>
+    <div  class="col-md-6 form-group">
+        <label for="yearOfPassing" class="form-label">Year Of Passing :</label>
+       
+    
+        
+        <input type="date" class="form-control" id="yearOfPassing" name="yearOfPassing" [(ngModel)]="academicDetails.yearOfPassing" required>
+        <!--
+        <input type="text" class="form-control" id="yearOfPassing" name="yearOfPassing" [(ngModel)]="academicDetails.yearOfPassing" required>
+        -->
+        <!--
+        <select class="custom-select" name="yearOfPassing" [(ngModel)]="academicDetails.yearOfPassing" value="{{currentYear}}" required>
+            <option value="{{currentYear}}" selected>{{currentYear}}</option>
+            <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+            </select>
+            -->
+    </div>
+    <div  class="col-md-6 form-group" >
+        <label for="degree" class="form-label">degree</label>
+        <input type="text" class="form-control" id="degree" name="degree" 
+        [(ngModel)]="academicDetails.degree" 
+        #degree="ngModel"  [class.is-invalid]="degree.invalid && degree.touched" required>
+        <small class="text-danger" [class.d-none]= "degree.valid || degree.untouched">Degree cannot be empty</small>
+    </div>
+    <div  class="col-md-6 form-group" >
+        <label for="state" class="form-label">state</label>
+        <input type="text" class="form-control" id="state" name="state" 
+        [(ngModel)]="academicDetails.state" 
+        #state="ngModel"  [class.is-invalid]="state.invalid && state.touched" required>
+        <small class="text-danger" [class.d-none]= "state.valid || state.untouched">University or Board cannot be empty</small>
+    </div>
+    <div  class="col-md-6 form-group" >
+        <label for="country" class="form-label">country</label>
+        <input type="text" class="form-control" id="country" name="country" 
+        [(ngModel)]="academicDetails.country" 
+        #country="ngModel"  [class.is-invalid]="country.invalid && country.touched" required>
+        <small class="text-danger" [class.d-none]= "country.valid || country.untouched">country cannot be empty</small>
+    </div>
+
+ 
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        <label for="gpaOrPercentage" class="form-label">gpaOrPercentage</label>
+        <input type="text" class="form-control" id="gpaOrPercentage" name="gpaOrPercentage" [(ngModel)]="academicDetails.gpaOrPercentage" required minlength="5">
+       
+    </div>
+    <div class="col-md-6 form-group">
+    <button type="submit" (click)="addOrUpdateAcademicDetails()" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+ 
+ 
+
+  </form>
+
+
+</div>
+</div>
+</div> 

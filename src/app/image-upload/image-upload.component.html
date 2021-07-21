@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row">   
+        <div class="col-md-12">
+            <div *ngIf=imageBoolean>
+                <img [src]="retrievedImage" class="rounded" width="120" height="120">
+            </div>
+            <div *ngIf=!imageBoolean>
+                <img src="/assets/images/profile_picture.png" class="rounded" width="120" height="120">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center">
+            <i style='font-size:20px;color: indigo;' class='far'data-toggle="modal" data-target="#updateModal" >&#xf044;</i>
+        </div>
+        <div class="col-md-4 d-flex align-items-center">
+            <i  style='font-size:20px;color: red;'  class="fas fa-trash-alt" data-toggle="modal" data-target="#deleteModal"></i>
+        </div> 
+    </div>
+</div>
+
+<div class="modal" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirmation for deletion</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you want to delete the image?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            
+          <button type="button" class="btn btn-danger" (click)="deleteImage()" data-dismiss="modal">delete</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="updateModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Choose an image and upload</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="container row">
+                <div class="col-md-6">
+                    <input type="file" (change)="onFileChanged($event)" class="btn btn-primary">
+            
+                </div>
+               
+            </div>
+            <div class="container row">
+                <div class="col-md-12">
+                    <div *ngIf=message>{{message}}</div>
+                </div>
+            </div>
+          
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            
+          <button type="button" class="btn btn-success" (click)="onUpload()" data-dismiss="modal">Upload</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=message>{{message}}</div>
+    </div>
+</div>
+
+
+
+
+
