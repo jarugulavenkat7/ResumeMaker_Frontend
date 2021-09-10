@@ -54,13 +54,18 @@
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
-        <div class="col-md-3">
-            <div class="col-md-12">
-            <app-image-upload></app-image-upload>
-            </div>
-            <div class="col-md-12">
-                <button type="submit" [routerLink]="['/resumes/',obtainedResumeId,'resumePrint']" class="btn btn-primary">Review & Print</button>
-            </div>
+        <div class="col-md-3" >
+            <div class="card mt-3 bg-primary text-white" >
+                <div class="col-md-12 pt-3">
+                    <app-image-upload></app-image-upload>
+                </div>
+            
+        </div>
+        <div class="col-md-12">
+            <div class="card mt-3 bg-dark text-white" >
+            <button type="submit" [routerLink]="['/resumes/',obtainedResumeId,'resumePrint']" class="btn btn-primary">Review & Print</button>
+        </div>
+        </div>
         </div>
     
 </div>

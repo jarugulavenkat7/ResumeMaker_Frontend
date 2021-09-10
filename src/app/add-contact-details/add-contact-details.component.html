@@ -1,8 +1,42 @@
-<p>add-contact-details works!</p>
-<div class="container">
-    <h3>ContactDetails</h3>  
-    email:<input type="text" name="email" [(ngModel)]="contactDetails.email"> 
-    phoneNumber:<input type="text" name="phoneNumber" [(ngModel)]="contactDetails.phoneNumber"> 
-    <button type="submit" (click)="addOrUpdateContactDetails()" class="btn btn-success">Save</button>
 
+
+
+<div class="container">
+    <div class="card">
+        <h2 class="card-header  bg-primary mb-3">Contact Details</h2   >
+        <div class="card-body">
+            <form #contactDetailsForm="ngForm">
+
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control"  name="email" [(ngModel)]="contactDetails.email"
+                         #email="ngModel"  [class.is-invalid]="email.invalid && email.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email cannot be empty</small>
+                        
+                        
+                    </div>
+                    <div class="col-md-6 form-group ">
+
+                        <label for="phoneNumber" class="form-label">Email</label>
+                        <input type="text" class="form-control"  name="phoneNumber" [(ngModel)]="contactDetails.phoneNumber"
+                         #phoneNumber="ngModel"  [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="phoneNumber.valid || phoneNumber.untouched">Phone Number cannot be empty</small>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+                    <button type="submit" (click)="addOrUpdateContactDetails()" class="btn btn-success" [disabled]="contactDetailsForm.invalid">Save</button>
+                </div>
+                </div>
+
+            </form>
 </div>
+</div>
+</div>
+    

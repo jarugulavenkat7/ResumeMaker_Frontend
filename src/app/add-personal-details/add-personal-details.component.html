@@ -1,16 +1,39 @@
 
 <div class="container">
-<div class="card">
-    <h2 class="card-header  bg-primary mb-3">Personal Details</h2   >
-    <div class="card-body">
-        <div class="form-group">
-            First Name:<input type="text" name="firstName" [(ngModel)]="personalDetails.firstName"> 
-            Last Name:<input type="text" name="lastName" [(ngModel)]="personalDetails.lastName">
-            <button type="submit" (click)="addOrUpdatePersonalDetails()" class="btn btn-success">Save</button>
-        </div>
-    </div>
-  </div>
-</div> 
- 
+    <div class="card">
+        <h2 class="card-header  bg-primary mb-3">Personal Details</h2   >
+        <div class="card-body">
+            <form #personalDetailsForm="ngForm">
 
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control"  name="firstName" [(ngModel)]="personalDetails.firstName"
+                         #firstName="ngModel"  [class.is-invalid]="firstName.invalid && firstName.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First Name cannot be empty</small>
+                        
+                        
+                    </div>
+                    <div class="col-md-6 form-group ">
+
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control"  name="lastName" [(ngModel)]="personalDetails.lastName"
+                         #lastName="ngModel"  [class.is-invalid]="lastName.invalid && lastName.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last Name cannot be empty</small>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+                    <button type="submit" (click)="addOrUpdatePersonalDetails()" class="btn btn-success" [disabled]="personalDetailsForm.invalid">Save</button>
+                </div>
+                </div>
+
+            </form>
+</div>
+</div>
+</div>
     

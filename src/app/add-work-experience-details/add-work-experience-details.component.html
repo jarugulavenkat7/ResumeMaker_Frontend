@@ -1,37 +1,55 @@
+
+
+
 <div class="container">
     <div class="card">
-        <h2 class="card-header  bg-primary mb-3">Work Experience Details</h2   >
+        <h2 class="card-header  bg-primary mb-3">Contact Details</h2   >
         <div class="card-body">
-            <form #academicDetailsForm="ngForm">
-               
+            <form #workExperienceDetailsForm="ngForm">
+
                 <div class="row">
                     <div class="col-md-6 form-group ">
+
                         <label for="employeer" class="form-label">Employeer</label>
-                        <input type="text" class="form-control" name="employeer" [(ngModel)]="workExperienceDetails.employeer">
+                        <input type="text" class="form-control"  name="employeer" [(ngModel)]="workExperienceDetails.employeer"
+                         #employeer="ngModel"  [class.is-invalid]="employeer.invalid && employeer.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="employeer.valid || employeer.untouched">employeer cannot be empty</small>
+                        
+                        
                     </div>
                     <div class="col-md-6 form-group ">
+
                         <label for="startDate" class="form-label">Start Date</label>
-                        <input type="date" class="form-control" name="startDate" [(ngModel)]="workExperienceDetails.startDate"> 
+                        <input type="text" class="form-control"  name="startDate" [(ngModel)]="workExperienceDetails.startDate"
+                         #startDate="ngModel"  [class.is-invalid]="startDate.invalid && startDate.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="startDate.valid || startDate.untouched">Start Date cannot be empty</small>
+                        
+                        
                     </div>
                 </div>
                 <div class="row">
-                    
                     <div class="col-md-6 form-group ">
+
                         <label for="endDate" class="form-label">End Date</label>
-                        <input type="date" class="form-control" name="endDate" [(ngModel)]="workExperienceDetails.endDate"> 
-
+                        <input type="text" class="form-control"  name="endDate" [(ngModel)]="workExperienceDetails.endDate"
+                         #endDate="ngModel"  [class.is-invalid]="endDate.invalid && endDate.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="endDate.valid || endDate.untouched">End Date cannot be empty</small>
+                        
+                        
                     </div>
-                    <div class="col-md-6 form-group">
-                        <button type="submit" (click)="addOrUpdateWorkExperienceDetails()" class="btn btn-primary">Submit</button>
-                        </div>
-
+                    <div class="col-md-6 form-group ">
+                    <button type="submit" (click)="addOrUpdateWorkExperienceDetails()" class="btn btn-success" [disabled]="workExperienceDetailsForm.invalid">Save</button>
+                </div>
                 </div>
 
-            
-               
-            
             </form>
-        </div>
-    </div>
 </div>
+</div>
+</div>
+    
+
+
 

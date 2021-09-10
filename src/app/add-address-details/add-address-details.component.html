@@ -1,22 +1,89 @@
+
+
+
 <div class="container">
     <div class="card">
-        <h2 class="card-header  bg-primary mb-3">AddressDetails</h2   >
+        <h2 class="card-header  bg-primary mb-3">Address Details</h2   >
         <div class="card-body">
-            <div>
-            <div class="form-group">
-                addressLine1:<input type="text" name="addressLine1" [(ngModel)]="addressDetails.addressLine1"> 
-                addressLine2:<input type="text" name="addressLine2" [(ngModel)]="addressDetails.addressLine2">
-            </div>
-                <div class="form-group">
-                city:<input type="text" name="city" [(ngModel)]="addressDetails.city"> 
-                state:<input type="text" name="state" [(ngModel)]="addressDetails.state">
-            </div>
-                <div class="form-group">
-                country:<input type="text" name="country" [(ngModel)]="addressDetails.country">
-                pincode:<input type="text" name="pincode" [(ngModel)]="addressDetails.pincode">
-                <button type="submit"  class="btn btn-success" (click)="addOrUpdateAddressDetails()">Save</button>
-            </div>
-        </div>
-        </div>
-      </div>
-    </div> 
+            <form #addressDetailsForm="ngForm">
+
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+
+                        <label for="addressLine1" class="form-label">Address Line1</label>
+                        <input type="text" class="form-control"  name="addressLine1" [(ngModel)]="addressDetails.addressLine1"
+                         #addressLine1="ngModel"  [class.is-invalid]="addressLine1.invalid && addressLine1.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="addressLine1.valid || addressLine1.untouched">Address Line1 cannot be empty</small>
+                        
+                        
+                    </div>
+                    <div class="col-md-6 form-group ">
+
+                        <label for="addressLine2" class="form-label">Address Line2</label>
+                        <input type="text" class="form-control"  name="addressLine2" [(ngModel)]="addressDetails.addressLine2"
+                         #addressLine2="ngModel"  [class.is-invalid]="addressLine2.invalid && addressLine2.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="addressLine2.valid || addressLine2.untouched">Address Line2 cannot be empty</small>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+
+                        <label for="city" class="form-label">city</label>
+                        <input type="text" class="form-control"  name="city" [(ngModel)]="addressDetails.city"
+                         #city="ngModel"  [class.is-invalid]="city.invalid && city.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="city.valid || city.untouched">city cannot be empty</small>
+                        
+                        
+                    </div>
+                    <div class="col-md-6 form-group ">
+
+                        <label for="state" class="form-label">state</label>
+                        <input type="text" class="form-control"  name="state" [(ngModel)]="addressDetails.state"
+                         #state="ngModel"  [class.is-invalid]="state.invalid && state.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="state.valid || state.untouched">State cannot be empty</small>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+
+                        <label for="country" class="form-label">country</label>
+                        <input type="text" class="form-control"  name="country" [(ngModel)]="addressDetails.country"
+                         #country="ngModel"  [class.is-invalid]="country.invalid && country.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="country.valid || country.untouched">country cannot be empty</small>
+                        
+                        
+                    </div>
+                    <div class="col-md-6 form-group ">
+
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="text" class="form-control"  name="pincode" [(ngModel)]="addressDetails.pincode"
+                         #pincode="ngModel"  [class.is-invalid]="pincode.invalid && pincode.touched" required>
+                         
+                        <small class="text-danger" [class.d-none]="pincode.valid || pincode.untouched">Pincode cannot be empty</small>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group ">
+                    <button type="submit" (click)="addOrUpdateAddressDetails()" class="btn btn-success" [disabled]="addressDetailsForm.invalid">Save</button>
+                </div>
+                </div>
+
+            </form>
+</div>
+</div>
+</div>
+    
+
+
